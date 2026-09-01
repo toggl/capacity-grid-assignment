@@ -36,7 +36,6 @@ both ends are yours to design together.
 - **NEVER edit `DECISIONS.md`** — that file is written by the human working with you, not by you. Leave it alone even if asked to tidy the repo.
 - **NEVER edit `db/schema.sql` or `db/seed.sql`** — the data is fixed input. Read it, work with what is there.
 - **NEVER change `docker-compose.yml`, the `Dockerfile`s, or the `Makefile`** — the run environment is fixed, and submissions that alter it cannot be built.
-- **NEVER add a dependency** — neither task needs one.
 - Commit as you go on a feature branch. Don't squash at the end — the history is worth keeping.
 
 ## Working Notes

@@ -54,7 +54,8 @@ They're fixed input — don't edit them.
 ## Ground rules
 
 - **Use AI tools.** We do, all day. This task assumes it.
-- **Don't add dependencies.** Neither half needs one.
+- **Use whatever dependencies help.** The API already includes `sqlx`, which we use in
+  Focus API, but using it is optional.
 - **Don't touch the run environment** — Compose files, Dockerfiles, the Makefile, the
   schema, or the seed. We rebuild submissions with our own copies of those, so changes
   there are lost anyway.
