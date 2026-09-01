@@ -5,8 +5,17 @@ small slice of that: allocation against capacity, per person, per week.
 
 Budget about an hour. The scaffold runs already — `make up` gives you a working database,
 a working API, and a working dev server. Two things are stubbed out and yours to build.
+You do not need Go, Node.js, or Postgres installed locally.
+
+## Requirements
+
+- Docker with Docker Compose v2
+- Make
+- Ports 3000 and 8080 available
 
 ## Running it
+
+From the repository root:
 
 ```bash
 make up
@@ -14,6 +23,19 @@ make up
 
 Web on http://localhost:3000, API on http://localhost:8080.
 `GET /api/health` works today and tells you the database is seeded.
+
+`make up` stays in the foreground. Leave it running while you work and press `Ctrl-C` to
+stop it. Frontend changes reload automatically. After a backend change, stop and run
+`make up` again so the API is rebuilt.
+
+Useful commands:
+
+```bash
+make down   # stop and remove the containers
+make reset  # wipe the database and re-seed it
+make logs   # follow API logs
+make psql   # open a Postgres shell
+```
 
 ## What to build
 
@@ -26,7 +48,7 @@ The JSON shape between them is undefined on purpose. It's your API; design it.
 
 ## The data
 
-`db/schema.sql` and `db/seed.sql` hold a small team and their assignments. Read them.
+`db/schema.sql` and `db/seed.sql` hold the team and their assignments. Read them.
 They're fixed input — don't edit them.
 
 ## Ground rules
