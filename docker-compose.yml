@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:17-alpine
+    image: postgres:17.11-alpine
     environment:
       POSTGRES_USER: capacity
       POSTGRES_PASSWORD: capacity
@@ -23,8 +23,6 @@ services:
         condition: service_healthy
     ports:
       - "8080:8080"
-    volumes:
-      - ./api:/src
 
   web:
     image: node:24-alpine

@@ -3,8 +3,9 @@
 Managers need to see who is over-committed before the week starts, not after. This is a
 small slice of that: allocation against capacity, per person, per week.
 
-Budget about an hour. The scaffold runs already — `make up` gives you a working database,
-a working API, and a working dev server. Two things are stubbed out and yours to build.
+Budget about ninety minutes. The scaffold runs already — `make up` gives you a working
+database, a working API, and a working dev server. Three things are stubbed out and yours
+to build.
 You do not need Go, Node.js, or Postgres installed locally.
 
 ## Requirements
@@ -43,6 +44,11 @@ make psql   # open a Postgres shell
    week in the range, how many hours they're allocated and how much capacity they have.
 2. **`CapacityGrid`** in `web/src/CapacityGrid.tsx` — people down the side, weeks across
    the top, over-allocation obvious at a glance.
+3. **Editing capacity** — a manager can change someone's weekly hours from the grid.
+   `PATCH /api/people/{id}` is stubbed in `api/people.go`. After saving, the numbers
+   on screen must be correct without a full page reload — how they get there (refetch
+   the range, patch what you already have, something optimistic) is a decision we'll
+   ask about, so write it down.
 
 The JSON shape between them is undefined on purpose. It's your API; design it.
 
