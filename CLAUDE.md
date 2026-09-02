@@ -21,12 +21,13 @@ make psql     # psql shell against the seeded database
 
 ## What You Are Building
 
-Two things, both marked `TODO`:
+Three things, all marked `TODO`:
 
 | Where | What |
 |-------|------|
 | `api/capacity.go` | `GET /api/capacity?from=&to=` — allocated hours and capacity, per person, per week |
 | `web/src/CapacityGrid.tsx` | The grid that renders it, with over-allocation obvious at a glance |
+| `api/people.go` | `PATCH /api/people/{id}` — update a person's weekly hours; the grid must stay correct after |
 
 The JSON shape between them is undefined on purpose. The grid is its only consumer, so
 both ends are yours to design together.
@@ -55,7 +56,7 @@ reads clearly. Keep it short — a line or two per entry.
 
 ## Layout
 
-- `api/` — Go service. `main.go` wires the server; `capacity.go` is the endpoint.
+- `api/` — Go service. `main.go` wires the server; `capacity.go` and `people.go` are the endpoints.
 - `web/` — Vite + React app. `App.tsx` sets the range; `CapacityGrid.tsx` renders it.
 - `db/` — `schema.sql` and `seed.sql`, loaded automatically on first `make up`.
 - `.notes/` — your working notes.
